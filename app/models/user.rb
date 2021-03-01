@@ -9,5 +9,7 @@ class User < ApplicationRecord
   attachment :profile_image, destroy: false
 
   validates :name, length: {maximum: 20, minimum: 2}, uniqueness: true
-  validates :introduction, :presence => true, length: {maximum: 50}
+  validates :introduction, presence: true, on: :update
+  validates :introduction, length: { maximum: 50 }
+
 end
