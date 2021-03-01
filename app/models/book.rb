@@ -1,5 +1,6 @@
 class Book < ApplicationRecord
-	has_many :user
+	
+	has_many :users
 
 	validates :title, presence: true
 	validates :body, presence: true, length: {maximum: 200}
